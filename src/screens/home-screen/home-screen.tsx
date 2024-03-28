@@ -1,23 +1,25 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import  styles  from '../home-screen/style'
 
+const HomeScreen = ({navigation} : {navigation : any} ) => {
 
-function HomeScreen() {
+    const handleNavToLogin = () => {
+        console.log('Navigate to login screen')
+        navigation.replace('LoginScreen')
+    }
     return (
-        <View style={styles.container}>
-            <Text>Text from Home screen</Text>
-        </View>
+        <>
+            <View style={styles.container}>
+                <Text>Text from Home screen</Text>
+            </View>
+            <View>
+                <Button title='Go to Login Screen' onPress={handleNavToLogin}></Button>
+            </View>
+        </>
+        
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    },
-});
 
 
 export default HomeScreen;
